@@ -21,6 +21,17 @@
     <script src="{% static 'js/customer.js' %}" type="text/javascript"></script>
 
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #c8e8e9;
+        background-size: cover;
+        background-position: center;
+        color: #333;
+    }
+</style>
 
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;" aria-label="" aria-labbelledby="">
@@ -36,13 +47,13 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/SentRequests" style="color: #f1f1f1;">Sent Requests</a>
-                </li>
+                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="http://127.0.0.1:8000/aboutus" style="color: #f1f1f1;">About Us</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" style="color: #f1f1f1;">Contact Us</a>
-                </li>
+                    <a class="nav-link" href="http://127.0.0.1:8000/contactus" style="color: #f1f1f1;">Contact Us</a>
+                </li> 
             </ul>
 
             <ul class="navbar-nav justify-content-end">
@@ -52,10 +63,10 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav justify-content-end">
+            {% comment %} <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
                     <a class="nav-link" href="/Logout" style="color: #f1f1f1;">
-                        Logout</a>
+                        Logout</a> {% endcomment %}
                 </li>
             </ul>
 
@@ -63,7 +74,7 @@
     </nav>
 
     <!-- Side bar -->
-
+{% comment %} 
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2" style="height: auto; background-color: #f1f1f1;" id="demo">
@@ -163,9 +174,9 @@
                             <strong>Price Range</strong>
                             <div class="form-check">
                                 <a href="#" style="color: black;">
-                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Under ₹1000</label>
-                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Under ₹1000 - ₹2000</label>
-                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Above ₹2000</label>
+                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Under Rs1000</label>
+                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Under Rs1000 - Rs2000</label>
+                                    <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Above Rs2000</label>
                                 </a>
                             </div>
 
@@ -193,7 +204,7 @@
             </ul>
         </nav>
 
-    </div>
+    </div> {% endcomment %}
 
 
 

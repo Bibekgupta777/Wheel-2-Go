@@ -12,7 +12,7 @@ urlpatterns = [
     path('register/',views.register,name="Register"),
     path('Profile/',views.Profile,name="Profile"),
     path('about/', views.about_us, name="AboutUs"),
-    path('contact/', views.contact_us, name="ContactUs"),
+    # path('contact/', views.contact_us, name="ContactUs"),
     path('search/', views.search, name="Search"),
     path('LoginAuthentication/',views.LoginAuthentication,name="LoginAuthentication"),
     path('RegisterCustomer/',views.RegisterCustomer,name="RegisterCustomer"),
@@ -23,7 +23,16 @@ urlpatterns = [
     path('Owner/',include("Owner.urls")),
     path('Manager/',include("Manager.urls")),
     path('aboutus',views.aboutus,name='aboutus'),
+     path('contactus',views.contact,name='contact'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL ,document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+

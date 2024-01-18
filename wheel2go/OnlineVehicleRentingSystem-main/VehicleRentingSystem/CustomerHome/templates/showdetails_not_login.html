@@ -79,7 +79,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div class="card-body">
+                    {% comment %} <div class="card-body">
                         <h5 class="card-title p-1" style="background-color: yellow; text-align: center;">Check Availability
                         </h5>
                         <form action="{% url 'CheckAvailability' vehicle.Vehicle_license_plate %}" class="px-4 py-3" method="post" enctype="multipart/form-data">
@@ -94,7 +94,7 @@
                                 <div class="col-4">
                                     <input type="submit" class="btn btn-success" value="Check Availability" />
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </form>
                     </div>
                 </div>

@@ -6,6 +6,8 @@ from Owner.models import Owner
 from Manager.models import Manager
 from Vehicles.models import Vehicle
 from RentVehicle.models import RentVehicle
+from .models import Contact
+from django.http import HttpResponse
 
 from datetime import datetime
 from datetime import date
@@ -213,8 +215,8 @@ def SentRequests(request):
 def about_us(request):
     return HttpResponse('About Us')
     
-def contact_us(request):
-    return HttpResponse('Contact Us')
+# def contact_us(request):
+#     return HttpResponse('Contact Us')
 
 def search(request):
     return HttpResponse('search')
@@ -222,3 +224,23 @@ def search(request):
 
 def aboutus(request):
     return render(request,"aboutUs.html")
+
+
+def contact(request):
+    if request.method=="POST":
+      contact=Contact()
+      name=request.POST.get('name')
+      email=request.POST.get('email')
+      subject=request.POST.get('subject')
+      contact.name=name
+      contact.email=email
+      contact.subject=subject
+      contact.save()
+      return HttpResponse("<h1>thanks for contact</h1>")
+
+
+    return render(request,"contactus.html")
+
+
+
+
