@@ -94,7 +94,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/Manager/SentRequests">Sent Requests</a>
-                        <a class="dropdown-item" href="#">Previous Rentals</a>
+                        {% comment %} <a class="dropdown-item" href="#">Previous Rentals</a> {% endcomment %}
                     </div>
                 </li>
 
@@ -103,8 +103,8 @@
                         Customer's Rentals <span class="badge badge-warning">{{no_of_pending_request}}</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/Manager/RentRequest">Rent Requests <span class="badge badge-warning mx-2">{{no_of_pending_request}}</span></a>
-                        <a class="dropdown-item" href="#">Rental History</a>
+                        <a class="dropdown-item" href="/Manager/RentRequest">Rental History <span class="badge badge-warning mx-2">{{no_of_pending_request}}</span></a>
+                        {% comment %} <a class="dropdown-item" href="#">Rental History</a> {% endcomment %}
                         <a class="dropdown-item" href="/Manager/AllCustomers">View All Customers</a>
                     </div>
                 </li>
