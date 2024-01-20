@@ -157,3 +157,11 @@ def count_pending_rent_request():
         if rv.request_status == "Pending":
             no_of_pending_request+=1
     return no_of_pending_request
+
+
+
+
+def aboutus(request):
+    return render(request,"aboutUs.html")
+
+

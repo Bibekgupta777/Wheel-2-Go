@@ -244,3 +244,17 @@ def contact(request):
 
 
 
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+
+
+
+def terms(request):
+    return render(request, 'termsofuse.html')
+
+
+
+

@@ -24,10 +24,15 @@ urlpatterns = [
     path('Manager/',include("Manager.urls")),
     path('aboutus',views.aboutus,name='aboutus'),
      path('contactus',views.contact,name='contact'),
+     path('privacy',views.privacy_policy,name='pprivacy'),
+     path('terms',views.terms,name='termss'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL ,document_root=settings.MEDIA_ROOT)
+
+
+
 
 
 

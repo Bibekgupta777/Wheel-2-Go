@@ -21,6 +21,16 @@
     <script src="{% static 'js/customer.js' %}" type="text/javascript"></script>
 
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://wallpaperaccess.com/full/13678.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+    }
+</style>
 
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;">
@@ -33,6 +43,12 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/" style=" color: #f1f1f1; ">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/aboutus" style=" color: #f1f1f1; ">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/contactus" style=" color: #f1f1f1; ">Contact Us</a>
                 </li>
                 
             </ul>
@@ -79,7 +95,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    {% comment %} <div class="card-body">
+                     <div class="card-body">
                         <h5 class="card-title p-1" style="background-color: yellow; text-align: center;">Check Availability
                         </h5>
                         <form action="{% url 'CheckAvailability' vehicle.Vehicle_license_plate %}" class="px-4 py-3" method="post" enctype="multipart/form-data">
@@ -94,7 +110,7 @@
                                 <div class="col-4">
                                     <input type="submit" class="btn btn-success" value="Check Availability" />
                                 </div>
-                            </div> {% endcomment %}
+                            </div> 
                         </form>
                     </div>
                 </div>
