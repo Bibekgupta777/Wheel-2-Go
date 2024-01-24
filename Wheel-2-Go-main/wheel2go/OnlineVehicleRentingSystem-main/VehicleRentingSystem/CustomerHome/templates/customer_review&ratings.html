@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Professional Review Form</title>
+</head>
+<body>
+
+    <div class="review-container">
+        <h1>Customer Review & Ratings</h1>
+        <form id="review-form">
+            <div class="form-group">
+                <label for="rating">Rating (1-5):</label>
+                <div class="rating-stars" id="rating-stars">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment">Your Review:</label>
+                <textarea id="comment" name="comment" required></textarea>
+            </div>
+            <button type="button" onclick="submitReview()">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.review-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.rating-stars i {
+    font-size: 24px;
+    color: #ffb400;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating-stars i:hover, .rating-stars i.active {
+    color: #ff7f00;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+
+<script>
+    // Handle star clicks for rating selection
+const ratingStarsContainer = document.getElementById('rating-stars');
+ratingStarsContainer.addEventListener('click', handleStarClick);
+
+// Function to handle star clicks for rating selection
+function handleStarClick(event) {
+    const star = event.target;
+    if (star.tagName === 'SPAN') {
+        const ratingValue = parseInt(star.dataset.value);
+        updateRatingStars(ratingValue);
+    }
+}
+
+// Function to update the displayed rating stars
+function updateRatingStars(ratingValue) {
+    const stars = document.querySelectorAll('.rating-stars span');
+    stars.forEach((star, index) => {
+        if (index < ratingValue) {
+            star.classList.add('active');
+        } else {
+            star.classList.remove('active');
+        }
+    });
+}
+
+// Function to submit the review (you can replace this with your backend logic)
+function submitReview() {
+    const ratingInput = document.querySelector('.rating-stars span.active');
+    const commentInput = document.getElementById('comment');
+
+    const rating = ratingInput ? parseInt(ratingInput.dataset.value) : null;
+    const comment = commentInput.value;
+
+    // Validate inputs
+    if (!rating || !comment) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // You can send the data to your backend here
+    console.log('Rating:', rating);
+    console.log('Comment:', comment);
+
+    // Optionally, reset the form after submission
+    resetRatingStars();
+    commentInput.value = '';
+}
+
+// Function to reset star rating to default state
+function resetRatingStars() {
+    const stars = document.querySelectorAll('.rating-stars span');
+    stars.forEach(star => star.classList.remove('active'));
+}
+
+</script>
