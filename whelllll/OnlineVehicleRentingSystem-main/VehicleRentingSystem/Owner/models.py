@@ -13,10 +13,6 @@ class Owner(models.Model):
     Owner_gender = models.CharField(max_length=15)
     Owner_license =  models.ImageField(upload_to='img/Owner_License/')
     Owner_agency = models.CharField(max_length=100)
-    Owner_city = models.CharField(max_length=30)
-    Owner_state = models.CharField(max_length=30)
-    Owner_country = models.CharField(max_length=30)
-    Owner_pincode = models.IntegerField()
     isOwner = models.BooleanField(default=True)
 
     def __str__(self):

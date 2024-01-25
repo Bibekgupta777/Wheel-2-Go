@@ -12,10 +12,7 @@ class Customer(models.Model):
     customer_mobileno = models.CharField(max_length=10)
     customer_gender = models.CharField(max_length=15)
     customer_license = models.ImageField(upload_to='img/Customer_License/')
-    customer_city = models.CharField(max_length=30)
-    customer_state = models.CharField(max_length=30)
-    customer_country = models.CharField(max_length=30)
-    customer_pincode = models.IntegerField()
+    
 
     def __str__(self):
         return self.customer_email + ": " + str(self.customer_license)

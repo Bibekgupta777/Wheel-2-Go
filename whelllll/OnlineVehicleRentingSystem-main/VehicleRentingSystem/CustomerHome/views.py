@@ -92,10 +92,6 @@ def RegisterCustomer(request):
     customer_email=request.POST.get('customer_email','')
     customer_password=request.POST.get('customer_password','')
     customer_address=request.POST.get('customer_address','')
-    customer_city=request.POST.get('customer_city','')
-    customer_state=request.POST.get('customer_state','')
-    customer_country=request.POST.get('customer_country','')
-    customer_pincode=request.POST.get('customer_pincode','')
     customer_license=request.FILES['customer_license']
 
     result_customer = Customer.objects.filter(customer_email=customer_email)
@@ -109,8 +105,7 @@ def RegisterCustomer(request):
         customer=Customer(customer_firstname=customer_firstname,customer_lastname=customer_lastname,
         customer_dob=customer_dob,customer_gender=customer_gender,customer_mobileno=customer_mobileno,
         customer_email=customer_email,customer_password=customer_password,customer_address=customer_address,
-        customer_city=customer_city,customer_state=customer_state,customer_country=customer_country,
-        customer_pincode=customer_pincode,customer_license=customer_license)
+        customer_license=customer_license)
         
         customer.save()
         request.session['user_email'] = customer_email
