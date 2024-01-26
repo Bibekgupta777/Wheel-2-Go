@@ -1,0 +1,59 @@
+{% extends 'Customer_only_navbar_Loggedin.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Driver Profile {% endblock %}</title>
+</head>
+
+<body>
+    {% block name %}{{driver.driver_firstname}}{% endblock %}
+    {% block pagecontent %}
+    <div class="container my-5">
+        <div class="row">
+            <!-- License Image -->
+            <div class="col-sm-4">
+                <div class="card p-2" style="width: auto;">
+                    <img class="card-img-top" src="{{driver.driver_license.url}}" alt="Driver's License">
+                    <div class="card-body">
+                        <h6 class="card-title">Driver's License</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information -->
+            <div class="col-sm-8">
+                <div class="card p-2" style="width: auto;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">First Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{driver.driver_firstname}}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Last Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{driver.driver_lastname}}
+                            </div>
+                        </div>
+                        
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock pagecontent %}
+</body>
+
+</html>
