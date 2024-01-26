@@ -81,8 +81,7 @@
 </style>
 
 <body>
-    <body>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;" aria-label="" aria-labbelledby="">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;" aria-label="" aria-labbelledby="">
             <a href="\"><img class="navbar-brand" src="{% static 'img/Logos/logo.jpg' %}" height="50"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -202,7 +201,6 @@
                                         <label class="form-check-label justify-content-end" for="price" style="cursor: pointer;" onMouseOver="this.style.color='tomato'" onMouseOut="this.style.color='black'">Above Rs2000</label>
                                     </a>
                                 </div>
-    
                             </form>
                         </div>
                     </div>
@@ -226,15 +224,139 @@
                     </li> {% endcomment %}
                 </ul>
             </nav>
-    
+
         </div>
+
     <!-- Your existing content here -->
+    <div>
+
+            <!-- Review and Rating Form -->
+    <div class="review-form-container">
+        <h3>Feedback and Ratings </h3>
+        <form id="review-form">
+            <label for="rating"></label>
+            <div class="rating-stars" id="rating-stars">
+                <span data-value="1">&#9733;</span>
+                <span data-value="2">&#9733;</span>
+                <span data-value="3">&#9733;</span>
+                <span data-value="4">&#9733;</span>
+                <span data-value="5">&#9733;</span>
+            </div>
+            <label for="comment">Your Feedback:</label>
+            <input type="text" id="name" required>
+            <button type="button" onclick="submitReview()">Submit</button>
+        </form>
+    </div>
+
+    </div>
+    
+    <style>
+ body {
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+
+.review-form-container {
+/* position: fixed; */
+/* bottom: 0; */
+/* left: 50%; */
+/* transform: translateX(-50%); */
+background-color: #f9f9f9;
+/* padding: 20px; */
+/* text-align: center; */
+/* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+width: 100%;
+max-width: 5000px;
+}
+h2 {
+color: #333;
+}
+
+form {
+margin: 0 auto;
+}
+
+label {
+display: block;
+margin: 10px 0;
+}
+
+input, textarea {
+width: 50%;
+padding: 10px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+
+.rating-stars span {
+font-size: 36px;
+color: #ffb400;
+cursor: pointer;
+transition: color 0.3s;
+}
+
+.rating-stars span:hover, .rating-stars span.active {
+color: #ff7f00;
+}
+
+button {
+background-color: #4caf50;
+color: #fff;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 10%;
+}
+
+button:hover {
+background-color: #45a049;
+}
+}
+    </style>
+
+    <script>
+        // Function to submit the review (you can replace this with your backend logic)
+function submitReview() {
+    const ratingInput = document.querySelector('.rating-stars span.active');
+    const nameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+
+    const rating = ratingInput ? parseInt(ratingInput.dataset.value) : null;
+    const name = nameInput.value;
+    const comment = commentInput.value;
+
+    // Validate inputs
+    if (!rating || !name || !comment) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // You can send the data to your backend here or perform any other actions
+    console.log('Name:', name);
+    console.log('Rating:', rating);
+    console.log('Comment:', comment);
+
+    // Optionally, reset the form after submission
+    resetRatingStars();
+    nameInput.value = '';
+    commentInput.value = '';
+}
+
+// Function to reset star rating to default state
+function resetRatingStars() {
+    const stars = document.querySelectorAll('.rating-stars span');
+    stars.forEach(star => star.classList.remove('active'));
+}
+    </script>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+    <script src="script.js"></script>
 </body>
 
 <footer class="footer">
