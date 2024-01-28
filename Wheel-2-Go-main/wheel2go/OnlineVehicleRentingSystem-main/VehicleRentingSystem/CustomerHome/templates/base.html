@@ -120,14 +120,14 @@
     
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2" style="height: auto; background-color: #f1f1f1;" id="demo">
+                <div class="col-sm-2" style="height:auto; background-color: #f1f1f1;" id="demo">
                     <div class="row">
                         <div class="col-sm mt-2">
                             <label class="sr-only" for="inlineFormInputGroup">Search</label>
                             <div class="input-group mb-2">
                                 <input type="search" class="form-control" id="inlineFormInputGroup" placeholder="Search">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button><br>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                     <input type="checkbox" class="form-check-input" id="Bike">
                                     <label class="form-check-label" for="Bike">Bike</label>
                                 </div>
-                                
+
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="Scooter">
                                     <label class="form-check-label" for="Scooter">Scooter</label>
@@ -156,14 +156,13 @@
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="MiniVan">
                                     <label class="form-check-label" for="MiniVan">MiniVan</label>
-                                </div>
+                                </div><br>
     
                                 <strong>Company</strong>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="Maruti">
                                     <label class="form-check-label" for="Maruti">Maruti</label>
                                 </div>
-                                
                                 
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="Toyato">
@@ -176,8 +175,7 @@
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="Kia">
                                     <label class="form-check-label" for="Kia">Kia</label>
-                                </div>
-                                
+                                </div><br>
     
                                 <strong>Fuel Type</strong>
                                 <div class="form-check">
@@ -191,7 +189,7 @@
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="Electric">
                                     <label class="form-check-label" for="Electric">Electric</label>
-                                </div>
+                                </div><br>
     
                                 <strong>Price Range</strong>
                                 <div class="form-check">
@@ -229,10 +227,9 @@
 
     <!-- Your existing content here -->
     <div>
-
             <!-- Review and Rating Form -->
     <div class="review-form-container">
-        <h3>Feedback and Ratings </h3>
+        <h4>Leave Your Feedback and Ratings!</h4>
         <form id="review-form">
             <label for="rating"></label>
             <div class="rating-stars" id="rating-stars">
@@ -242,77 +239,52 @@
                 <span data-value="4">&#9733;</span>
                 <span data-value="5">&#9733;</span>
             </div>
-            <label for="comment">Your Feedback:</label>
+            <!-- <label for="comment">Your Feedback:</label> -->
             <input type="text" id="name" required>
             <button type="button" onclick="submitReview()">Submit</button>
         </form>
     </div>
-
     </div>
     
     <style>
- body {
-font-family: 'Arial', sans-serif;
-margin: 0;
-padding: 0;
-
-.review-form-container {
-/* position: fixed; */
-/* bottom: 0; */
-/* left: 50%; */
-/* transform: translateX(-50%); */
-background-color: #f9f9f9;
-/* padding: 20px; */
-/* text-align: center; */
-/* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
-width: 100%;
-max-width: 5000px;
-}
-h2 {
-color: #333;
-}
-
-form {
-margin: 0 auto;
-}
-
-label {
-display: block;
-margin: 10px 0;
-}
-
-input, textarea {
-width: 50%;
-padding: 10px;
-margin-bottom: 10px;
-box-sizing: border-box;
-}
-
-.rating-stars span {
-font-size: 36px;
-color: #ffb400;
-cursor: pointer;
-transition: color 0.3s;
-}
-
-.rating-stars span:hover, .rating-stars span.active {
-color: #ff7f00;
-}
-
-button {
-background-color: #4caf50;
-color: #fff;
-padding: 10px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-width: 10%;
-}
-
-button:hover {
-background-color: #45a049;
-}
-}
+        body{
+            .review-form-container {
+                max-width: 850px; /* Set a maximum width for the container */
+                margin-left: 20%;
+                width: 100%; /* Make the container responsive */
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff; 
+                input, textarea {
+                    width: 70%;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    box-sizing: border-box;
+                }
+                button {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 10%;
+            }
+            button:hover {
+                background-color: #45a049;
+            }  
+            }
+            .rating-stars span {
+                font-size: 36px;
+                color: #ffb400;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+            .rating-stars span:hover, .rating-stars span.active {
+                color: #ff7f00;
+            }
+        }
     </style>
 
     <script>
