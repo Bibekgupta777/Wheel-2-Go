@@ -1,0 +1,155 @@
+{% extends 'vivek.html' %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Privacy Policy{% endblock %}</title>
+</head>
+
+<body>
+    {% block pagecontent %}
+        <!-- Your existing page content goes here -->
+
+        {% block aboutus %}
+           
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunder Car & Bike Rental - Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://wallpaperaccess.com/full/13671.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 50vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            min-height: 3vh;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        .footer p {
+            font-size: 12px;
+            color: white;
+        }
+    
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+    
+        .footer a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+    
+        .footer ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        .footer li {
+            margin: 0;
+        }
+    
+        .footer li:not(:last-child) {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+    
+
+    <section>
+        <h2>Privacy Policy</h2>
+        <p>
+            At Thunder Car & Bike Rental, we value your privacy and are committed to protecting your personal information.
+            This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you use our services.
+            Please read this policy carefully to understand our practices regarding your personal information.
+        </p>
+        <h3>Information We Collect:</h3>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, contact information (email address, phone number, address), and identification documents (driver’s license, passport) required for rental purposes.</li>
+            <li><strong>Payment Information:</strong> Credit card details or other payment information for processing rental transactions.</li>
+            <li><strong>Device and Usage Information:</strong> Technical information such as IP address, device type, browser type, and operating system when you access our website or use our services.</li>
+            <li><strong>Location Information:</strong> If you provide us with location data or allow access to your device’s location settings, we may collect this information for specific rental services.</li>
+            <li><strong>Communications:</strong> We may record and store any communications you have with our customer support or through our website.</li>
+        </ul>
+
+        <!-- Add other sections based on your Privacy Policy -->
+
+        <h3>How We Use Your Information:</h3>
+        <ul>
+            <li><strong>Providing Rental Services:</strong> To process your reservations, communicate with you, and manage the rental transaction.</li>
+            <li><strong>Customer Support:</strong> To respond to your inquiries, provide assistance, and address any issues you may encounter.</li>
+            <li><strong>Improving Services:</strong> To enhance our website, services, and offerings based on user preferences and feedback.</li>
+            <li><strong>Marketing:</strong> With your consent, we may send promotional offers, updates, and newsletters related to our services.</li>
+            <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, or legal processes.</li>
+        </ul>
+
+        <!-- Add other sections based on your Privacy Policy -->
+
+        <!-- Add other sections based on your Privacy Policy -->
+
+       
+
+        <!-- Add other sections based on your Privacy Policy -->
+    {% comment %} </section>
+    <footer class="footer">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
+                <p class="text-xs text-gray-400 md:text-sm">Copyright 2024 &copy; All Rights Reserved</p>
+            </div>
+            <div class="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
+                <ul class="list-reset flex justify-center flex-wrap text-xs md:text-sm gap-3">
+                    <li class="mx-4"><a href="http://127.0.0.1:8000/privacy" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    <li><a href="http://127.0.0.1:8000/terms" class="text-gray-400 hover:text-white">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer> 
+</section> {% endcomment %}
+{% endblock aboutus %}
+{% endblock pagecontent %}
+</body>
+
+</html>
