@@ -6,8 +6,9 @@ from Owner.models import Owner
 from Manager.models import Manager
 from Vehicles.models import Vehicle
 from RentVehicle.models import RentVehicle
-from .models import Contact
+from .models import Contact, Feedback
 from django.http import HttpResponse
+
 
 from datetime import datetime
 from datetime import date
@@ -92,10 +93,6 @@ def RegisterCustomer(request):
     customer_email=request.POST.get('customer_email','')
     customer_password=request.POST.get('customer_password','')
     customer_address=request.POST.get('customer_address','')
-    customer_city=request.POST.get('customer_city','')
-    customer_state=request.POST.get('customer_state','')
-    customer_country=request.POST.get('customer_country','')
-    customer_pincode=request.POST.get('customer_pincode','')
     customer_license=request.FILES['customer_license']
 
     result_customer = Customer.objects.filter(customer_email=customer_email)
@@ -109,8 +106,7 @@ def RegisterCustomer(request):
         customer=Customer(customer_firstname=customer_firstname,customer_lastname=customer_lastname,
         customer_dob=customer_dob,customer_gender=customer_gender,customer_mobileno=customer_mobileno,
         customer_email=customer_email,customer_password=customer_password,customer_address=customer_address,
-        customer_city=customer_city,customer_state=customer_state,customer_country=customer_country,
-        customer_pincode=customer_pincode,customer_license=customer_license)
+        customer_license=customer_license)
         
         customer.save()
         request.session['user_email'] = customer_email
@@ -256,5 +252,19 @@ def terms(request):
     return render(request, 'termsofuse.html')
 
 
+def feedrating(request):
+    if request.method == "POST":
+        feedback = Feedback()
+        email = request.POST.get('email')
+        rating = request.POST.get('rating')
+        feedback_text = request.POST.get('feedback')  # Use a different variable name
 
+        feedback.email = email
+        feedback.rating = rating
+        feedback.feedback = feedback_text  # Use the correct variable
+
+        feedback.save()
+        return HttpResponse("<h1>Thanks for your feedback</h1>")
+
+    return render(request, 'feedback.html')
 

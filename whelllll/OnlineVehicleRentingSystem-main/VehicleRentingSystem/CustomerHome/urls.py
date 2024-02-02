@@ -26,6 +26,7 @@ urlpatterns = [
      path('contactus',views.contact,name='contact'),
      path('privacy',views.privacy_policy,name='pprivacy'),
      path('terms',views.terms,name='termss'),
+     path('feedback',views.feedrating,name='feedback'),
 ]
 
 if settings.DEBUG:

@@ -13,10 +13,7 @@ class Manager(models.Model):
     Manager_gender = models.CharField(max_length=15)
     Manager_license = models.ImageField(upload_to='img/Manager_License/')
     Manager_agency = models.CharField(max_length=100,default="Fast Rentals")
-    Manager_city = models.CharField(max_length=30)
-    Manager_state = models.CharField(max_length=30)
-    Manager_country = models.CharField(max_length=30)
-    Manager_pincode = models.IntegerField()
+    
     isOwner = models.BooleanField(default=False)
 
     def __str__(self):
