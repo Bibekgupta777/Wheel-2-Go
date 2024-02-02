@@ -1,0 +1,183 @@
+{% extends 'vivek.html' %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Terms Of Use{% endblock %}</title>
+</head>
+
+<body>
+    {% block pagecontent %}
+        <!-- Your existing page content goes here -->
+
+        {% block aboutus %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel 2 Go Car & Bike Rental - Terms of Use</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://wallpaperaccess.com/full/13671.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            min-height: 5vh;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 75px auto 20px; 
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            width: 100%;
+        }
+    
+        .footer p {
+            font-size: 12px;
+            color: white;
+        }
+    
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+    
+        .footer a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+    
+        .footer ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        .footer li {
+            margin: 0;
+        }
+    
+        .footer li:not(:last-child) {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wheel 2 Go</h1>
+    </header>
+
+
+    
+        <section>
+            <h2>Terms of Use</h2>
+            <p>
+                Welcome to Wheel 2 Go Car & Bike Rental! These Terms of Use govern your use of our website and services. Please read them carefully.
+            </p>
+    
+            <h3>1. Acceptance of Terms</h3>
+            <p>
+                By accessing or using our website and services, you agree to comply with and be bound by these Terms of Use. If you do not agree with any part of these terms, you may not use our services.
+            </p>
+    
+            <h3>2. Rental Eligibility</h3>
+            <p>
+                To use our rental services, you must be at least 18 years old and possess a valid driver's license. By renting a vehicle, you affirm that you meet these criteria.
+            </p>
+    
+            <h3>3. Vehicle Reservation</h3>
+            <p>
+                Reservations are subject to vehicle availability. We reserve the right to refuse or cancel reservations at our discretion.
+            </p>
+    
+            <h3>4. Rental Fees and Payments</h3>
+            <p>
+                You agree to pay all applicable fees and charges associated with your rental. Payment is due at the time of reservation or pickup, as specified in our payment policy.
+            </p>
+    
+            <h3>5. Rental Duration</h3>
+            <p>
+                The rental duration is outlined in your reservation. Extensions must be arranged in advance and are subject to availability.
+            </p>
+    
+            <h3>6. Vehicle Usage</h3>
+            <p>
+                You agree to use the rented vehicle responsibly and in accordance with applicable laws. Prohibited activities include, but are not limited to, unauthorized driving, overloading, and towing.
+            </p>
+    
+            <h3>7. Vehicle Return</h3>
+            <p>
+                You must return the vehicle at the agreed-upon time and location. Late returns may incur additional charges.
+            </p>
+    
+            <h3>8. Damage and Liability</h3>
+            <p>
+                You are responsible for any damage to the rented vehicle during the rental period. Liability and insurance details are outlined in our rental agreement.
+            </p>
+    
+            <h3>9. Cancellation and Refund</h3>
+            <p>
+                Our cancellation policy governs reservation cancellations. Refunds, if applicable, are subject to the terms outlined in our policy.
+            </p>
+    
+            <h3>10. Privacy</h3>
+            <p>
+                We respect your privacy. Our Privacy Policy outlines how we collect, use, and safeguard your personal information.
+            </p>
+    
+            <h3>11. Termination</h3>
+            <p>
+                We reserve the right to terminate your access to our services at our discretion for violations of these Terms of Use.
+            </p>
+    
+            <h3>12. Changes to Terms</h3>
+            <p>
+                We may update these Terms of Use at any time without prior notice. It is your responsibility to review them periodically.
+            </p>
+        
+    </section>
+
+    <footer class="footer">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
+                <p class="text-xs text-gray-400 md:text-sm">© 2024 Wheel 2 Go. All Rights Reserved |</p>
+            </div>
+        </div>
+    </footer> 
+    {% endblock aboutus %}
+    {% endblock pagecontent %}
+</body>
+
+</html>

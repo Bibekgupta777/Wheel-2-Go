@@ -1,0 +1,285 @@
+{% extends 'vivek.html' %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+
+
+<body>
+    {% block pagecontent %}
+       
+
+        {% block aboutus %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Feedback & Ratings{% endblock %}</title>
+    <style>
+        /* Google Font CDN Link */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container .content .left-side {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+            position: relative;
+        }
+
+        .content .left-side::before {
+            content: "";
+            position: absolute;
+            height: 70%;
+            width: 2px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #000;
+        }
+
+        .content .left-side .details {
+            margin: 14px;
+            text-align: center;
+        }
+
+        .content .left-side .details i {
+            font-size: 10px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .content .left-side .details .topic {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .content .left-side .details .text-one,
+        .content .left-side .details .text-two {
+            font-size: 14px;
+            color: #000;
+        }
+
+        .container .content .right-side {
+            width: 75%;
+            margin-left: 75px;
+        }
+
+        .content .right-side .topic-text {
+            font-size: 23px;
+            font-weight: 600;
+            color: #3e2093;
+            margin-bottom: 20px;
+        }
+
+        .right-side .input-box {
+            height: 55px;
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .right-side .input-box input,
+        .right-side .input-box textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: #f0f1f8;
+            border-radius: 6px;
+            padding: 0 15px;
+            resize: none;
+        }
+
+        .right-side .message-box {
+            min-height: 110px;
+        }
+
+        .right-side .input-box textarea {
+            padding-top: 6px;
+        }
+
+        .right-side .button {
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        .right-side .button button[type="submit"] {
+            color: #fff;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #3e2093;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .right-side .button button[type="submit"]:hover {
+            background: #5029bc;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        .footer a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        .footer ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin: 0;
+        }
+
+        .footer li:not(:last-child) {
+            margin-right: 5px;
+        }
+
+    </style>
+
+    <script>
+        function validateFeedbackForm() {
+            var ratingInput = document.getElementById("rating");
+            var rating = parseInt(ratingInput.value);
+
+            if (isNaN(rating) || rating < 0 || rating > 10) {
+                alert("Please enter a valid rating between 0 and 10.");
+                ratingInput.focus();
+                return false;
+            }
+
+            // Additional validation logic if needed
+
+            return true;
+        }
+
+        function validateEmail() {
+            var emailInput = document.getElementById("email");
+            var email = emailInput.value.trim().toLowerCase();
+
+            if (!email.endsWith("@gmail.com")) {
+                alert("Please enter a valid Gmail address.");
+                emailInput.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Feedback & Ratings</h1>
+        <form class="" method="post" onsubmit="return validateEmail() && validateFeedbackForm();">
+            {% csrf_token %}
+            <div class="content">
+                <div class="left-side">
+                    <div class="address details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">Kathmandu</div>
+                        <div class="text-two">Anamnagar</div>
+                    </div>
+                    <div class="phone details">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">+9779829229020</div>
+                        <div class="text-two">++9779848581665</div>
+                    </div>
+                    <div class="email details">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">vivek.gupta.22265@gmail.com</div>
+                        <div class="text-two">info.wheel2go@gmail.com</div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Give your feedback & ratings</div>
+
+                    <div class="input-box">
+                        <input name='email' type="text" placeholder="Enter your email" required />
+                    </div>
+                    
+
+                    <div class="input-box">
+                        <input name='rating' id="rating" type="number" placeholder="Give your rating number (0-10)" min="0" max="10" required />
+                    </div>
+                    <div class="input-box message-box">
+                        <textarea name='feedback' placeholder="Enter your feedback" required></textarea>
+                    </div>
+                    <div class="button">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        
+                <p class="text-xs text-gray-400 md:text-sm">© 2024 Wheel 2 Go. All Rights Reserved | </p>
+            </div>
+        </div>
+    </footer>
+    
+    {% endblock aboutus %}
+    {% endblock pagecontent %}
+    
+</body>
+
+</html>
