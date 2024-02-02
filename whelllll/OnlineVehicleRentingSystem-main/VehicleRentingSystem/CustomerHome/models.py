@@ -31,6 +31,13 @@ class Contact(models.Model):
         return self.name
 
 
+from django.db import models
 
+class Feedback(models.Model):
+    email = models.EmailField(max_length=50)
+    rating = models.IntegerField()
+    feedback_text = models.TextField()
 
+    def _str_(self):
+        return self.email 
 
